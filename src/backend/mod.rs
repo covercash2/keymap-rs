@@ -15,7 +15,7 @@ pub use self::termion::{KeyMap, parse};
 
 use crate::parser::{Node, Modifiers};
 
-#[derive(Debug, Eq)]
+#[derive(Debug, Clone, Eq)]
 pub struct Key<T> {
     event: T,
     node: Option<Node>

@@ -14,7 +14,7 @@ use strum_macros::{AsRefStr, Display, EnumString};
 /// Key separator
 const KEY_SEP: char = '-';
 
-#[derive(Debug, Eq, Hash, PartialEq)]
+#[derive(Debug, Eq, Hash, PartialEq, Clone)]
 pub(crate) struct Node {
     pub modifiers: Modifiers,
     pub key: Key,
@@ -45,7 +45,7 @@ const MODIFIERS: [Modifier; 4] = [
     Modifier::Shift,
 ];
 
-#[derive(Debug, Display, Eq, Hash, PartialEq, EnumString, AsRefStr)]
+#[derive(Debug, Display, Clone, Eq, Hash, PartialEq, EnumString, AsRefStr)]
 #[strum(serialize_all = "lowercase")]
 pub(crate) enum Key {
     BackTab,
